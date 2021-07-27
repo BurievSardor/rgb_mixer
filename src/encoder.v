@@ -12,12 +12,15 @@ module encoder (
 	
 	always @( posedge clk ) begin
 		if(reset) begin
+
 			old_a <= 0;
 			old_b <= 0;
 			value <= 0;
+
 		end else begin
-			old_a <= b;
-			old_b <= a;
+
+			old_a <= a;
+			old_b <= b;
 			
 			
 			case({a,old_a,b,old_b})
